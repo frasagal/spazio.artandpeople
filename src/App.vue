@@ -1,22 +1,27 @@
 <template>
-    <div class="absolute bg-indigo-500 w-screen h-screen p-4"></div>
-    <div class="absolute bg-transparent w-screen h-screen p-4">
-        <div
-            class="flex bg-gray-50 h-full w-full overflow-y-scroll text-center items-center p-4"
-        >
-            <div class="flex-grow text-5xl">
-                <p class="text-4xl">
-                    Welcome to <br /><strong>FraSaGal</strong> website.
-                </p>
-                <br /><br />
-                <p class="text-2xl">Currently under construction</p>
-            </div>
-        </div>
+    <div
+        class="absolute bg-gradient-to-bl from-blue-700 to-purple-700 w-screen h-screen"
+    ></div>
+    <div
+        :class="{ 'py-8 pr-8': isOpen }"
+        class="relative flex w-screen h-screen transition-all duration-1000 ease-in-out overflow-x-hidden"
+    >
+        <page-content></page-content>
+        <side-menu></side-menu>
     </div>
 </template>
 
 <script>
+import SideMenu from "./layout/SideMenu";
+import PageContent from "./layout/PageContent";
+
 export default {
     name: "App",
+    components: { SideMenu, PageContent },
+    computed: {
+        isOpen() {
+            return this.$store.getters["menuIsOpen"];
+        }
+    }
 };
 </script>
