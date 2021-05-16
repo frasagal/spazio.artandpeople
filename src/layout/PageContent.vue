@@ -5,7 +5,7 @@
         }"
         class="relative w-full h-full bg-gray-900 text-white text-center transition-transform transform duration-700 ease-in-out shadow-dark"
     >
-        <particles-bg type="cobweb" :num="21" :bg="true" color="#ffffff"/>
+        <particles-bg type="cobweb" :num="21" :bg="true" color="#ffffff"/> 
         <menu-button></menu-button>
         <slot></slot>
     </div>
