@@ -1,48 +1,71 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@font-face {
+    font-family: 'Monaco';
+    src: local('Monaco'), url(./../fonts/Monaco.ttf) format('ttf');
+}
 
+@tailwind utilities;
 .slide-left-1-enter-active {
-    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both;
+    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 0.3s;
 }
-.slide-left-1-leave-active {
-    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both reverse;
-    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
-        reverse;
-}
+
 .slide-left-2-enter-active {
-    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both;
+    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation-delay: 0.65s;
+    animation-delay: 0.6s;
 }
-.slide-left-2-leave-active {
-    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both reverse;
-    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
-        reverse;
-}
+
 .slide-left-3-enter-active {
-    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both;
+    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 0.9s;
 }
-.slide-left-3-leave-active {
-    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        both reverse;
-    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
-        reverse;
+
+.slide-left-4-enter-active {
+    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 1.2s;
 }
+
+.slide-left-5-enter-active {
+    -webkit-animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-left .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 1.5s;
+}
+
+.slide-left-1-leave-active {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+}
+
+.slide-left-2-leave-active {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+}
+
+.slide-left-3-leave-active {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+}
+
+.slide-left-4-leave-active {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+}
+
+.slide-left-5-leave-active {
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both reverse;
+}
+
 @-webkit-keyframes slide-left {
     0% {
         opacity: .2;
-        -webkit-transform: translateX(300px);
-        transform: translateX(300px);
+        -webkit-transform: translateX(500px);
+        transform: translateX(500px);
     }
     100% {
         opacity: 1;
@@ -50,11 +73,12 @@
         transform: translateX(0);
     }
 }
+
 @keyframes slide-left {
     0% {
         opacity: .2;
-        -webkit-transform: translateX(300px);
-        transform: translateX(300px);
+        -webkit-transform: translateX(500px);
+        transform: translateX(500px);
     }
     100% {
         opacity: 1;

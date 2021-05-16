@@ -3,29 +3,24 @@
         :class="{
             'rounded-r-xl overflow-hidden -translate-x-52 lg:-translate-x-96': isOpen,
         }"
-        class="flex items-center w-full bg-white text-center transition-transform transform duration-700 ease-in-out shadow-md"
+        class="relative w-full h-full bg-gray-900 text-white text-center transition-transform transform duration-700 ease-in-out shadow-dark"
     >
-        <div class="flex-grow text-5xl">
-            <p class="text-4xl">
-                Welcome to <br /><strong @click="toggleMenu()">FraSaGal</strong>
-                website.
-            </p>
-            <p class="text-2xl">Currently under construction</p>
-        </div>
+        <particles-bg type="cobweb" :num="21" :bg="true" color="#ffffff"/>
+        <menu-button></menu-button>
+        <slot></slot>
     </div>
 </template>
 
 <script>
+import { ParticlesBg } from "particles-bg-vue";
+import MenuButton from "./../components/buttons/MenuButton";
+
 export default {
     name: "PageContent",
+    components: { ParticlesBg, MenuButton },
     computed: {
         isOpen() {
             return this.$store.getters["menuIsOpen"];
-        },
-    },
-    methods: {
-        toggleMenu() {
-            this.$store.dispatch("toggleMenu");
         },
     },
 };
