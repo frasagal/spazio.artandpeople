@@ -7,6 +7,7 @@
     >
         <particles-bg type="cobweb" :num="21" :bg="true" color="#ffffff"/> 
         <menu-button></menu-button>
+        <lang-index></lang-index>
         <slot></slot>
     </div>
 </template>
@@ -14,10 +15,11 @@
 <script>
 import { ParticlesBg } from "particles-bg-vue";
 import MenuButton from "./../components/buttons/MenuButton";
+import LangIndex from "./../components/buttons/LangIndex";
 
 export default {
     name: "PageContent",
-    components: { ParticlesBg, MenuButton },
+    components: { ParticlesBg, MenuButton, LangIndex },
     computed: {
         isOpen() {
             return this.$store.getters["menuIsOpen"];

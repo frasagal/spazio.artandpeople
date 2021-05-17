@@ -18,7 +18,7 @@
         </div>
     </collapse-transition>
     <div
-        class="absolute right-64 lg:right-96 text-gray-900 w-16 pl-7 lg:pl-8 pt-12"
+        class="absolute right-64 lg:right-96 text-gray-900 w-16 pl-7 lg:pl-8 pt-4"
     >
         <div class="flex flex-col">
             <lang-selector class="relative" transition_name="slide-right-3" lang="it"></lang-selector>

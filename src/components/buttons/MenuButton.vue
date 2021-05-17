@@ -1,6 +1,6 @@
 <template>
     <div
-        class="absolute z-50 top-4 right-8 transition-all duration-600 cursor-pointer"
+        class="absolute z-50 top-10 right-8 transition-all duration-600 cursor-pointer"
         :class="{ 'text-xl text-gray-200': !isOpen, 'text-lg text-gray-400': isOpen }"
         @click="toggleMenu"
     >
