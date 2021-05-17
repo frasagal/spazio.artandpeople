@@ -501,6 +501,8 @@ module.exports = {
       none: 'none',
       disc: 'disc',
       decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
     },
     margin: (theme, { negative }) => ({
       auto: 'auto',
