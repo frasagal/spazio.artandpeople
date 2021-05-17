@@ -4,17 +4,21 @@
     >
         <div class="flex flex-grow flex-col md:items-center">
             <p class="hidden md:block xl:text-7xl uppercase mb-6">
-                <shuffle-text :text="me"/>
+                <shuffle-text :text="fullname" />
             </p>
-            <p class="md:hidden text-5xl mb-6 uppercase text-left">
-                <span class="bg-gray-200 text-gray-900 px-0.5">
-                    Francesco
+            <p class="md:hidden flex flex-col text-5xl mb-6 uppercase text-left">
+                <span class="flex-shrink bg-gray-200 text-gray-900 px-0.5">
+                    {{ dictionary.home_title_h1[0] }}
                 </span>
-                <span class="bg-gray-200 text-gray-900 px-0.5"> Saverio </span>
-                <span class="bg-gray-200 text-gray-900 px-0.5"> Galletti </span>
+                <span class="flex-shrink bg-gray-200 text-gray-900 px-0.5">
+                    {{ dictionary.home_title_h1[1] }}
+                </span>
+                <span class="flex-shrink bg-gray-200 text-gray-900 px-0.5">
+                    {{ dictionary.home_title_h1[2] }}
+                </span>
             </p>
             <p class="text-md xl:text-4xl text-left">
-                Developer & system integrator
+                {{ dictionary.home_title_h2 }}
             </p>
         </div>
     </div>
@@ -29,12 +33,23 @@ applyPolyfills().then(() => {
 
 export default {
     name: "HomePage",
-    data() {
-        return {
-            me: "Francesco Saverio Galletti",
-        };
+    computed: {
+        dictionary() {
+            return this.$store.getters["multilang/dictionary"];
+        },
+        fullname() {
+            return (
+                this.dictionary.home_title_h1[0] +
+                " " +
+                this.dictionary.home_title_h1[1] +
+                " " +
+                this.dictionary.home_title_h1[2]
+            );
+        },
     },
-    mounted() {},
+    mounted() {
+        console.log(this.dictionary);
+    },
     methods: {
         toggleMenu() {
             this.$store.dispatch("toggleMenu");

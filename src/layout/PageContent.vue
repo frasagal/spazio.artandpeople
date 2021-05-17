@@ -1,9 +1,9 @@
 <template>
     <div
         :class="{
-            'rounded-r-xl overflow-hidden -translate-x-52 lg:-translate-x-96': isOpen,
+            'rounded-r-xl overflow-hidden -translate-x-64 lg:-translate-x-96': isOpen,
         }"
-        class="relative w-full h-full bg-gray-900 text-white text-center transition-transform transform duration-700 ease-in-out shadow-dark"
+        class="relative z-20 w-full h-full bg-gray-900 text-white text-center transition-transform transform duration-700 ease-in-out shadow-dark"
     >
         <particles-bg type="cobweb" :num="21" :bg="true" color="#ffffff"/> 
         <menu-button></menu-button>

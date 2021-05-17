@@ -8,5 +8,15 @@
         "name": "About",
         "dst_path": "/about",
         "transition_name": "slide-left-2"
+    },
+    {
+        "name": "Badges",
+        "dst_path": "/badges",
+        "transition_name": "slide-left-3"
+    },
+    {
+        "name": "Projects",
+        "dst_path": "/projects",
+        "transition_name": "slide-left-4"
     }
 ]
