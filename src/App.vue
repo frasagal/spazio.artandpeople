@@ -28,12 +28,15 @@ export default {
     name: "App",
     components: { PageContent, SideMenu, CloseButton },
     mounted() {
-        this.$store.dispatch("multilang/setCurrent", { lang: "it" });
+        this.$store.dispatch("multilang/setCurrent", { lang: this.defaultLang });
     },
     computed: {
         isOpen() {
             return this.$store.getters["menuIsOpen"];
         },
+        defaultLang() {
+            return this.$store.getters["multilang/default"];
+        }
     },
 };
 </script>

@@ -11,7 +11,7 @@
                     :key="index"
                 >
                     <menu-item v-show="isOpen" :link="item.dst_path">{{
-                        item.name
+                        dictionary.menu[item.name]
                     }}</menu-item>
                 </transition>
             </div>
@@ -45,6 +45,9 @@ export default {
     computed: {
         isOpen() {
             return this.$store.getters["menuIsOpen"];
+        },
+        dictionary() {
+            return this.$store.getters["multilang/dictionary"];
         },
     },
 };

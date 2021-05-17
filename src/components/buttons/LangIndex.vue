@@ -1,6 +1,6 @@
 <template>
     <div
-        class="absolute flex flex-row items-center z-50 top-4 right-8 transition-all duration-600 cursor-pointer uppercase"
+        class="absolute flex flex-row items-center z-50 top-4 right-4 md:right-8 transition-all duration-600 cursor-pointer uppercase"
         :class="{
             'text-md text-gray-400': !isOpen,
             'text-sm text-gray-600': isOpen,

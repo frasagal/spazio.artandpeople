@@ -18,5 +18,10 @@
         "name": "Projects",
         "dst_path": "/projects",
         "transition_name": "slide-left-4"
+    },
+    {
+        "name": "Contacts",
+        "dst_path": "/contacts",
+        "transition_name": "slide-left-5"
     }
 ]
