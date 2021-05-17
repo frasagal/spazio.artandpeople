@@ -12,5 +12,5 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        format: markdown
-        args: Sir, frasagal.com currectly pushed! _ ${{ github.event.head_commit.message }} _
+        format: html
+        args: Sir, frasagal.com currectly pushed! <i> ${{ github.event.head_commit.message }} </i>
