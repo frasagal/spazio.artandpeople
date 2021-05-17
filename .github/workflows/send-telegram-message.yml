@@ -12,4 +12,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: Sir, frasagal.com currectly pushed! Message > github.event.after
+        args: Sir, frasagal.com currectly pushed! Message > ${{ github.event.after }} ${{ github.event.head_commit.message }}
