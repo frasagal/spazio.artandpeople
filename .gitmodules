@@ -1,0 +1,3 @@
+[submodule "multilanguage"]
+	path = src/store/modules/multilanguage
+	url = https://github.com/frasagal/multilanguage-vue
