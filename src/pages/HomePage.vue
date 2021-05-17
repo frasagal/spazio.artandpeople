@@ -4,7 +4,7 @@
     >
         <div class="flex flex-grow flex-col md:items-center">
             <p class="hidden md:block xl:text-7xl uppercase mb-6">
-                <shuffle-text :text="me" mode="hover" />
+                <shuffle-text :text="me"/>
             </p>
             <p class="md:hidden text-5xl mb-6 uppercase text-left">
                 <span class="bg-gray-200 text-gray-900 px-0.5">

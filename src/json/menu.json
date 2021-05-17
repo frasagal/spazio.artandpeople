@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Home",
+        "dst_path": "/",
+        "transition_name": "slide-left-1"
+    },
+    {
+        "name": "About",
+        "dst_path": "/about",
+        "transition_name": "slide-left-2"
+    }
+]
