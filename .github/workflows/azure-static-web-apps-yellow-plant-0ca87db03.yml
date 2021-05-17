@@ -33,7 +33,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
       
   telegram_notification_job:
-    name: Build
+    name: Telegram notification Job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
