@@ -31,14 +31,19 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      - name: Send custom message with args
+      
+  telegram_notification_job:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: send custom message with args
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: html
-          args: Sir, website <pre>frasagal.com</pre> currectly pushed! <i> ${{ github.event.head_commit.message }} </i>
-
+          args: Sir, frasagal.com currectly pushed! <i> ${{ github.event.head_commit.message }} </i>
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
