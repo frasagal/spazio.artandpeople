@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <div
+    <div class="bg-gradient-to-bl from-gray-200 to-gray-50">
+        <!-- <div
             class="absolute bg-gradient-to-bl from-gray-200 to-gray-50 w-screen h-screen"
-        ></div>
+        ></div> -->
         <div
             :class="{ 'py-8 pr-8 w-screen h-screen': isOpen }"
             class="relative flex transition-all duration-1000 ease-in-out overflow-x-hidden"
