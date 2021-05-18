@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Certified Network Associate",
+        "subline": "MTCNA",
+        "description": {
+            "it": "Descrizione",
+            "en": "Description"
+        },
+        "category": "network",
+        "organization": "Mikrotik",
+        "credential_id": "1910NA8490",
+        "credential_url": "@/assets/certifications/MTCNA.pdf",
+        "icon_url": "MTCNA.png",
+        "background_url": "mikrotik-badge-background.jpeg",
+        "achievement_date": "10/2019"
+    },
+    {
+        "name": "Basic Certified Engineer",
+        "subline": "",
+        "description": {
+            "it": "Il corso di certificazione 3CX Basic consiste in otto moduli, tutti fondamentali per poter impostare e configurare correttamente il tuo PBX. In poche parole, coprono i concetti di base per far funzionare 3CX e le tecniche di risoluzione dei problemi di base e alla fine ti prepareranno per la fase successiva. ",
+            "en": "The 3CX Basic Certification course consists of eight modules all of which are fundamental to be able to correctly setup and configure your PBX. In a nutshell, they cover the basic concepts of getting 3CX up and running as well as basic troubleshooting techniques and will ultimately prepare you for the next stage."
+        },
+        "category": "pbx",
+        "organization": "3CX",
+        "credential_id": "8JffINPdf7",
+        "credential_url": "@/assets/certifications/3CX_basic.pdf",
+        "icon_url": "3CX_basic.png",
+        "background_url": "3CX-badge-background.jpeg",
+        "achievement_date": "03/2019"
+    },
+    {
+        "name": "Intermediate Certified Engineer",
+        "subline": "",
+        "description": {
+            "it": "Descrizione",
+            "en": "Description"
+        },
+        "category": "pbx",
+        "organization": "3CX",
+        "credential_id": "xmQET7Sxvx",
+        "credential_url": "@/assets/certifications/3CX_intermediate.pdf",
+        "icon_url": "3CX_intermediate.png",
+        "background_url": "3CX-badge-background.jpeg",
+        "achievement_date": "03/2019"
+    },
+    {
+        "name": "Advanced Certified Engineer",
+        "subline": "",
+        "description": {
+            "it": "Descrizione",
+            "en": "Description"
+        },
+        "category": "pbx",
+        "organization": "3CX",
+        "credential_id": "C6s6bCn0YI",
+        "credential_url": "@/assets/certifications/3CX_advanced.pdf",
+        "icon_url": "3CX_advanced.png",
+        "background_url": "3CX-badge-background.jpeg",
+        "achievement_date": "03/2019"
+    },
+    {
+        "name": "Azure Fundamentas",
+        "subline": "AZ-900",
+        "description": {
+            "it": "Descrizione",
+            "en": "Description"
+        },
+        "category": "cloud",
+        "organization": "Microsoft",
+        "credential_id": "",
+        "credential_url": "",
+        "icon_url": "Microsoft_AZ-900.png",
+        "background_url": "Microsoft-badge-background.jpeg",
+        "achievement_date": ""
+    },
+    {
+        "name": "Azure IoT Developer",
+        "subline": "AZ-220",
+        "description": {
+            "it": "Descrizione",
+            "en": "Description"
+        },
+        "category": "cloud",
+        "organization": "Microsoft",
+        "credential_id": "",
+        "credential_url": "",
+        "icon_url": "Microsoft_AZ-220.png",
+        "background_url": "Microsoft-badge-background.jpeg",
+        "achievement_date": ""
+    }
+]

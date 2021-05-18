@@ -2,7 +2,7 @@
     <div
         class="relative min-h-screen max-w-7xl mx-auto px-4"
     >
-        <page-header title="About"></page-header>
+        <page-header :title="dictionary.menu.About"></page-header>
 
         <div class="flex flex-col space-y-8 md:space-y-16 items-start text-left font-mono text-gray-200 mt-16">
             <div
@@ -86,5 +86,10 @@ import PageHeader from "@/layout/PageHeader";
 export default {
     name: "AboutPage",
     components: { PageHeader },
+    computed: {
+        dictionary() {
+            return this.$store.getters["multilang/dictionary"];
+        },
+    },
 };
 </script>
