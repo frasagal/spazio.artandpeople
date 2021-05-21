@@ -7,11 +7,11 @@
         ],
         "home_title_h2": "Sviluppatore e consulente digitale",
         "menu": {
-            "Home": "Home",
-            "About": "Chi sono",
-            "Badges": "Badge",
-            "Projects": "Progetti",
-            "Contacts": "Contatti"
+            "Home": "home",
+            "About": "chi sono",
+            "Badges": "badge",
+            "Projects": "progetti",
+            "Contacts": "contatti"
         },
         "badges_dash_title": "Learning Board",
         "badges_dash_datasets": {
@@ -34,13 +34,13 @@
             "Saverio",
             "Galletti"
         ],
-        "home_title_h2": "Developer & digital consunltant",
+        "home_title_h2": "Developer & digital consultant",
         "menu": {
-            "Home": "Home",
-            "About": "About",
-            "Badges": "Badges",
-            "Projects": "Projects",
-            "Contacts": "Contacts"
+            "Home": "home",
+            "About": "about",
+            "Badges": "badges",
+            "Projects": "projects",
+            "Contacts": "contacts"
         },
         "badges_dash_title": "Learning Board",
         "badges_dash_datasets": {

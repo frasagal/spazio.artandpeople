@@ -1,6 +1,6 @@
 <template>
     <div
-        class="subheader mb-14 mt-20 px-4 py-8 sm:pt-24 shadow-inner border-t-2 sm:border-t-8 border-blue-400 bg-cover"
+        class="mb-14 mt-20 px-4 py-8 sm:pt-24 shadow-inner border-t-2 sm:border-t-8 border-blue-400 bg-cover"
         v-bind:style="{
             'background-image':
                 'url(' +

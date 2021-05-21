@@ -1,18 +1,58 @@
 <template>
-    <div class="flex flex-col space-y-16 items-start text-left font-mono mt-5 md:mt-6 text-gray-200">
-        <h1 class="text-sm bg-gray-200 text-gray-900 px-2">frasagal.com</h1>
-        <h1 class="text-6xl">
-            <span class="border-b-8 pb-0.5 md:pb-2">{{ first }}</span>
-            <span>{{ rest }}</span> 
-        </h1>
+    <div
+        class="bg-gradient-to-b from-gray-900 via-gray-900 to-transparent backdrop-filter backdrop-blur-sm flex flex-col items-start text-left font-mono text-gray-200 mb-16 sm:mb-8"
+    >
+        <div class="min-w-min sm:my-5">
+            <h1
+                :class="{
+                    'mt-4 text-sm sm:text-base bg-gray-200 text-gray-900 px-2': progress == 0,
+                    'mt-4 text-xs sm:text-sm text-gray-400': progress > 0,
+                }"
+                class="ml-4 w-min"
+            >
+                frasagal.com
+            </h1>
+        </div>
+        <div
+            :class="{
+                'text-6xl mt-16': progress == 0,
+                'text-3xl mt-4 ': progress > 0,
+            }"
+            class="flex flex-row px-4 transition-all duration-300"
+        >
+            <span
+                :class="{
+                    'border-b-4 sm:border-b-8': progress == 0,
+                    'border-none': progress > 0,
+                }"
+                class="pb-0.5 md:pb-4"
+            >
+                {{ first }}
+            </span>
+            <span>{{ rest }}</span>
+        </div>
+        <div class="px-4 w-full">
+            <div
+                :class="{
+                    'border-b border-gray-600': progress > 0,
+                }"
+                class="bg-transparent backdrop-filter backdrop-blur-sm w-full mt-0.5 mb-4 lg:mb-9 rounded-sm"
+            >
+                <div
+                    :style="{ width: 'calc(' + progress * 100 + '%)' }"
+                    class=""
+                >
+                    <div class="border-t-4 border-gray-200"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-
 export default {
     name: "PageHeader",
-    props: ["title"],
+    props: ["title", "progress"],
     computed: {
         isOpen() {
             return this.$store.getters["menuIsOpen"];
@@ -21,8 +61,8 @@ export default {
             return this.title.charAt(0);
         },
         rest() {
-            return this.title.substr(1, this.title.length)
-        }
+            return this.title.substr(1, this.title.length);
+        },
     },
 };
 </script>

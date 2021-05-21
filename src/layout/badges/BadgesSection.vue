@@ -21,7 +21,7 @@
             </p>
         </div>
         <div
-            class="sm:w-5/6 flex flex-col sm:flex-row flex-wrap items-center sm:-mb-24"
+            class="sm:w-auto flex flex-col sm:flex-row flex-wrap items-center sm:-mb-24"
         >
             <div
                 v-for="(badge, index) in category.dataset"

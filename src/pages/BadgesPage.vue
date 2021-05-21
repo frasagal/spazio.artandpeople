@@ -1,12 +1,10 @@
 <template>
     <div
-        class="relative min-h-screen max-w-7xl mx-auto sm:px-4 pb-96 flex flex-col"
+        class="relative px-4 overflow-y-auto"
     >
-        <page-header class="px-4" :title="dictionary.menu.Badges"></page-header>
+        <dash-section class="mb-24 max-w-7xl mx-auto" :badges="badges" :dictionary="dictionary"></dash-section>
 
-        <dash-section :badges="badges" :dictionary="dictionary"></dash-section>
-
-        <div v-for="(category, jdex) in all_badges" :key="jdex">
+        <div class="mb-24 max-w-7xl mx-auto" v-for="(category, jdex) in all_badges" :key="jdex">
             <badges-section :category="category" :dictionary="dictionary"></badges-section>
         </div>
     </div>
@@ -14,13 +12,12 @@
 
 <script>
 import badges from "@/json/badges.json";
-import PageHeader from "@/layout/PageHeader";
 import DashSection from "@/layout/badges/DashSection";
 import BadgesSection from "@/layout/badges/BadgesSection";
 
 export default {
     name: "BadgesPage",
-    components: { PageHeader, DashSection, BadgesSection },
+    components: { DashSection, BadgesSection },
     data() {
         return {
             badges: badges,
