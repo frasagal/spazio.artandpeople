@@ -2,14 +2,14 @@
     <div class="flex flex-row">
         <div class="flex-shrink flex flex-col mr-2 sm:mr-8 ">
             <div
-                class="bg-gradient-to-b from-gray-700 to-gray-200 w-1 h-14 mx-auto"
+                class="bg-gradient-to-b from-gray-700 to-gray-200 w-1 h-12  mx-auto"
             ></div>
             <div class="sticky top-24 sm:top-40">
                 <div
-                    class="flex flex-row bg-gray-200 w-1 h-7 sm:h-6 mx-auto"
+                    class="flex flex-row bg-gray-200 w-1 h-11 sm:h-12 mx-auto"
                 ></div>
                 <div class="flex flex-row">
-                    <div class="bg-gray-200 w-5 h-5 rounded-full"></div>
+                    <div class="bg-gray-200 w-4 md:w-5 h-4 md:h-5 rounded-full"></div>
                 </div>
             </div>
             <div class="bg-gray-200 w-1 h-8 mx-auto"></div>
@@ -19,30 +19,30 @@
         </div>
         <div class="flex-grow flex flex-col items-start">
             <div
-                class="h-12 px-4 flex-grow flex flex-col-reverse items-end pt-14"
+                class="h-12"
             >
-                <p class="text-gray-400 text-sm">
-                    {{ milestone.from }} - {{ milestone.to }}
-                </p>
             </div>
             <div
-                class="sticky top-24 sm:top-40 h-16 py-3 sm:py-1.5 flex-grow w-full text-left"
+                class="sticky top-24 sm:top-40 pt-4 pl-2 flex-grow w-full flex flex-col items-start text-left bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm "
             >
+                <p class="text-gray-400 text-sm mb-1">
+                    {{ milestone.from }} - {{ milestone.to }}
+                </p>
                 <p
-                    class="ml-4 text-gray-200 text-xl sm:text-2xl bg-none backdrop-filter backdrop-blur-sm py-2"
+                    class="whitespace-nowrap text-gray-200 text-xl sm:text-2xl border-b border-gray-800 shadow-sm pb-0.5 w-full"
                 >
                     {{ milestone.title }}
                 </p>
                 <!-- <div class="h-4 bg-gradient-to-b from-gray-900 to-transparent "></div> -->
-            </div>
-            <div class="h-8 flex-grow px-4">
-                <p
-                    class="bg-gray-300 text-gray-900 text-sm px-2 font-mono uppercase"
+                <!-- <p
+                    class="bg-gray-300 text-gray-900 text-xs md:text-sm px-2 ml-2 mt-3 flex-shrink font-mono uppercase"
                 >
                     {{ milestone.group }}
-                </p>
+                </p> -->
             </div>
-            <div class="flex-grow py-3 pl-4 pr-12 sm:pr-24 lg:pr-96">
+            <!-- <div class="h-8 flex-grow px-4">
+            </div> -->
+            <div class="flex-grow py-3 pl-2 pr-12 sm:pr-24 lg:pr-96">
                 <p class="text-left text-gray-400">
                     {{ milestone.description }}
                 </p>

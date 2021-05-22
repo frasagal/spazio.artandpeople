@@ -6,7 +6,7 @@
         class="relative z-20 w-screen h-screen bg-gray-900 text-white text-center transition-transform transform duration-700 ease-in-out shadow-dark"
     >
         <particles-bg
-            class="z-50"
+            class="z-50 filter blur-sm"
             type="cobweb"
             :num="21"
             :bg="true"
@@ -15,13 +15,14 @@
         <div
             ref="text"
             @scroll="onScroll"
-            class="overflow-y-auto z-50 h-screen w-screen right-0 absolute flex flex-col "
+            class="overflow-y-auto z-50 h-screen w-screen right-0 absolute flex flex-col"
         >
             <div class="flex-shrink sticky top-0 z-40">
                 <page-header
-                    class="max-w-7xl mx-auto "
+                    class="max-w-7xl mx-auto"
+                    :isEnabled="current.header_enabled"
                     :progress="progress"
-                    :title="currentRouteName"
+                    :title="dictionary.menu[current.name]"
                 ></page-header>
                 <menu-button></menu-button>
                 <lang-index></lang-index>
@@ -36,8 +37,9 @@
 <script>
 import { ParticlesBg } from "particles-bg-vue";
 import PageHeader from "@/layout/PageHeader";
-import MenuButton from "./../components/buttons/MenuButton";
-import LangIndex from "./../components/buttons/LangIndex";
+import MenuButton from "@/components/buttons/MenuButton";
+import LangIndex from "@/components/buttons/LangIndex";
+import menu from "@/json/menu.json";
 
 export default {
     name: "PageContent",
@@ -45,6 +47,7 @@ export default {
     data() {
         return {
             progress: 0,
+            menu: menu,
         };
     },
     computed: {
@@ -54,8 +57,10 @@ export default {
         dictionary() {
             return this.$store.getters["multilang/dictionary"];
         },
-        currentRouteName() {
-            return this.$route.path.substring(1);
+        current() {
+            return this.menu.filter((item) =>
+                this.search(item, this.$route.path)
+            )[0];
         },
     },
     methods: {
@@ -70,6 +75,9 @@ export default {
             } else {
                 this.progress = progress;
             }
+        },
+        search(item, current) {
+            return item.dst_path == current;
         },
     },
 };

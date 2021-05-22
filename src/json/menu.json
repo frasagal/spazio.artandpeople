@@ -2,26 +2,31 @@
     {
         "name": "Home",
         "dst_path": "/",
-        "transition_name": "slide-left-1"
+        "transition_name": "slide-left-1",
+        "header_enabled": false
     },
     {
         "name": "About",
         "dst_path": "/about",
-        "transition_name": "slide-left-2"
+        "transition_name": "slide-left-2",
+        "header_enabled": true
     },
     {
         "name": "Badges",
         "dst_path": "/badges",
-        "transition_name": "slide-left-3"
+        "transition_name": "slide-left-3",
+        "header_enabled": true
     },
     {
         "name": "Projects",
         "dst_path": "/projects",
-        "transition_name": "slide-left-4"
+        "transition_name": "slide-left-4",
+        "header_enabled": true
     },
     {
         "name": "Contacts",
         "dst_path": "/contacts",
-        "transition_name": "slide-left-5"
+        "transition_name": "slide-left-5",
+        "header_enabled": true
     }
 ]
