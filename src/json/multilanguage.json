@@ -1,6 +1,6 @@
 {
     "version": "1.0",
-    "default": "en",
+    "default": "it",
     "languages": [
         "it",
         "en"

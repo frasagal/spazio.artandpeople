@@ -9,7 +9,7 @@
         }"
     >
         <p
-            class="hidden sm:block text-5xl text-center mx-auto w-min whitespace-nowrap text-gray-900 shawdow-xl bg-blue-200 font-mono p-3 mb-14"
+            class="hidden sm:block text-5xl text-center mx-auto w-min whitespace-nowrap text-black shawdow-xl bg-blue-200 font-mono p-3 mb-14"
         >
             {{ dictionary.badges_dash_title }}
         </p>

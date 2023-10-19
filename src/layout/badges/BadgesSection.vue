@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col sm:flex-row items-center sm:mt-28 space-x-12 pt-6 sm:pt-12 sm:bg-gradient-to-r sm:from-gray-900 sm:via-gray-800 sm:to-gray-700 shadow-full"
+        class="flex flex-col sm:flex-row items-center sm:mt-28 space-x-12 pt-6 sm:pt-12 sm:bg-gradient-to-r sm:from-black sm:via-gray-800 sm:to-gray-700 shadow-full"
     >
         <div
             class="w-full sm:w-1/6 text-left flex flex-row sm:flex-col justify-between items-end sm:items-center mb-4 sm:mb-0"

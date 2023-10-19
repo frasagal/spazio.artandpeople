@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import BadgesPage from './pages/BadgesPage'
+import JoinPage from './pages/JoinPage'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,6 +18,11 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutPage
+    },
+    {
+      path: '/join',
+      name: 'join',
+      component: JoinPage
     },
     {
       path: '/badges',

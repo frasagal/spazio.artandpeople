@@ -1,60 +1,42 @@
 {
-    "it": {
-        "home_title_h1": [
-            "Francesco",
-            "Saverio",
-            "Galletti"
-        ],
-        "home_title_h2": "Sviluppatore e consulente digitale",
-        "menu": {
-            "Home": "home",
-            "About": "chi sono",
-            "Badges": "badge",
-            "Projects": "progetti",
-            "Contacts": "contatti"
-        },
-        "badges_dash_title": "Learning Board",
-        "badges_dash_datasets": {
-            "Certifications": "Certificazioni",
-            "Areas": [
-                "Aree",
-                "di competenza"
-            ],
-            "Years": [
-                "Anni",
-                "di esperienza"
-            ]
-        },
-        "in_progress": "In corso",
-        "show_credential": "Mostra certificato"
+  "it": {
+    "home_title_h1": ["Spazio.", "Art", "And", "People"],
+    "home_title_h2": "Sviluppatore e consulente digitale",
+    "menu": {
+      "Home": "home",
+      "About": "chi sono",
+      "Join": "iscriviti",
+      "Badges": "badge",
+      "Projects": "progetti",
+      "Contacts": "contatti"
     },
-    "en": {
-        "home_title_h1": [
-            "Francesco",
-            "Saverio",
-            "Galletti"
-        ],
-        "home_title_h2": "Developer & digital consultant",
-        "menu": {
-            "Home": "home",
-            "About": "about",
-            "Badges": "badges",
-            "Projects": "projects",
-            "Contacts": "contacts"
-        },
-        "badges_dash_title": "Learning Board",
-        "badges_dash_datasets": {
-            "Certifications": "Certifications",
-            "Areas": [
-                "Areas",
-                "of expertise"
-            ],
-            "Years": [
-                "Years",
-                "of experience"
-            ]
-        },
-        "in_progress": "In progress",
-        "show_credential": "Show credential"
-    }
+    "badges_dash_title": "Learning Board",
+    "badges_dash_datasets": {
+      "Certifications": "Certificazioni",
+      "Areas": ["Aree", "di competenza"],
+      "Years": ["Anni", "di esperienza"]
+    },
+    "in_progress": "In corso",
+    "show_credential": "Mostra certificato"
+  },
+  "en": {
+    "home_title_h1": ["Francesco", "Saverio", "Galletti"],
+    "home_title_h2": "Developer & digital consultant",
+    "menu": {
+      "Home": "home",
+      "About": "about",
+      "Join": "join Us",
+      "Badges": "badges",
+      "Projects": "projects",
+      "Contacts": "contacts"
+    },
+    "badges_dash_title": "Learning Board",
+    "badges_dash_datasets": {
+      "Certifications": "Certifications",
+      "Areas": ["Areas", "of expertise"],
+      "Years": ["Years", "of experience"]
+    },
+    "in_progress": "In progress",
+    "show_credential": "Show credential"
+  }
 }

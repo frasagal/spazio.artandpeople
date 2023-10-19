@@ -23,7 +23,7 @@
             >
             </div>
             <div
-                class="sticky top-24 sm:top-40 pt-4 pl-2 flex-grow w-full flex flex-col items-start text-left bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-sm "
+                class="sticky top-24 sm:top-40 pt-4 pl-2 flex-grow w-full flex flex-col items-start text-left bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm "
             >
                 <p class="text-gray-400 text-sm mb-1">
                     {{ milestone.from }} - {{ milestone.to }}
@@ -33,9 +33,9 @@
                 >
                     {{ milestone.title }}
                 </p>
-                <!-- <div class="h-4 bg-gradient-to-b from-gray-900 to-transparent "></div> -->
+                <!-- <div class="h-4 bg-gradient-to-b from-black to-transparent "></div> -->
                 <!-- <p
-                    class="bg-gray-300 text-gray-900 text-xs md:text-sm px-2 ml-2 mt-3 flex-shrink font-mono uppercase"
+                    class="bg-gray-300 text-black text-xs md:text-sm px-2 ml-2 mt-3 flex-shrink font-mono uppercase"
                 >
                     {{ milestone.group }}
                 </p> -->

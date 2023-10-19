@@ -12,6 +12,12 @@
         "header_enabled": true
     },
     {
+        "name": "Join",
+        "dst_path": "/join",
+        "transition_name": "slide-left-2",
+        "header_enabled": true
+    },
+    {
         "name": "Badges",
         "dst_path": "/badges",
         "transition_name": "slide-left-3",

@@ -43,7 +43,7 @@
             </div>
 
             <div class="border-b border-gray-200 w-3/4"></div>
-            <h2 class="text-2xl md:text-3xl bg-gray-200 text-gray-900">
+            <h2 class="text-2xl md:text-3xl bg-gray-200 text-black">
                 Formazione
             </h2>
             <p>
@@ -61,7 +61,7 @@
             </p>
 
             <div class="border-b border-gray-200 w-3/4"></div>
-            <h2 class="text-2xl md:text-3xl bg-gray-200 text-gray-900">
+            <h2 class="text-2xl md:text-3xl bg-gray-200 text-black">
                 Esperienze lavorative
             </h2>
             <p>
