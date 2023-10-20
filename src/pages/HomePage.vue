@@ -70,7 +70,7 @@
           height="1"
         />
       </form>
-      <div class="mt-6 mx-auto absolute bottom-0 right-0 w-full">
+      <div class="mt-6 mx-auto w-full">
         <div class="relative flex justify-evenly mb-4">
           <div class="w-10 h-10 items-center flex">
             <img src="/assets/youtube.png" srcset="" />
