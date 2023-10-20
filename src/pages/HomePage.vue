@@ -1,8 +1,9 @@
 <template>
-  <div id="main" class="flex justify-center items-start h-screen bg-black">
-    <header
-      class="header text-center w-full mx-auto max-w-screen-md p-8 md:p-8 bg-black text-white font-sans"
+  <div class="bg-black">
+    <div
+      class="relative text-center w-full mx-auto max-w-screen-md p-8 md:p-8 text-white font-sans flex flex-col h-full min-h-screen justify-between"
     >
+      <!-- class=" text-center w-full mx-auto max-w-screen-md p-8 md:p-8 text-white font-sans flex flex-col h-screen justify-between" -->
       <div class="my-6 text-center">
         <img
           src="assets/logo.svg"
@@ -53,52 +54,62 @@
         <span class="text-2xl">✓ </span
         ><span> La tua risposta è stata inviata!</span>
       </div>
-      <p class="text-white text-base md:text-lg my-6 text-justify">
+      <div class="text-white text-base md:text-lg my-6 text-justify">
         Per scoprire la risposta alla tua domanda e a quelle che hai letto in
         vetrina ti invitiamo all'<strong>evento</strong> di sabato
         <strong>18 NOVEMBRE</strong> esattamente qui, a <u>spazio.</u>
-      </p>
-      <form
-        action="https://www.paypal.com/donate"
-        method="post"
-        target="_top"
-        class="mt-14"
-      >
-        <p class="text-white text-base md:text-lg my-6 text-center">
-          Sostieni il progetto con una donazione!
-        </p>
-        <input type="hidden" name="hosted_button_id" value="YZXWNYEABVQAS" />
-        <input
-          type="image"
-          src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_LG.gif"
-          border="0"
-          name="submit"
-          title="PayPal - The safer, easier way to pay online!"
-          alt="Fai una donazione con il pulsante PayPal"
-        />
-        <img
-          alt=""
-          border="0"
-          src="https://www.paypal.com/it_IT/i/scr/pixel.gif"
-          width="1"
-          height="1"
-        />
-      </form>
+      </div>
+      <div>
+        <form
+          action="https://www.paypal.com/donate"
+          method="post"
+          target="_top"
+          class="mt-14"
+        >
+          <p class="text-white text-base md:text-lg my-6 text-center">
+            Sostieni il progetto con una donazione!
+          </p>
+          <input type="hidden" name="hosted_button_id" value="YZXWNYEABVQAS" />
+          <input
+            type="image"
+            src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_LG.gif"
+            border="0"
+            name="submit"
+            title="PayPal - The safer, easier way to pay online!"
+            alt="Fai una donazione con il pulsante PayPal"
+          />
+          <img
+            alt=""
+            border="0"
+            src="https://www.paypal.com/it_IT/i/scr/pixel.gif"
+            width="1"
+            height="1"
+          />
+        </form>
+      </div>
       <div class="mt-6 mx-auto w-full">
-        <div class="relative flex justify-evenly mb-4">
-          <div class="w-10 h-10 items-center flex">
-            <img src="/assets/youtube.png" srcset="" />
-          </div>
-          <div class="w-10 h-10">
-            <img src="/assets/instagram.png" srcset="" />
-          </div>
+        <div class="relative flex justify-evenly mb-8">
+          <a
+            href="https://www.youtube.com/@SpazioArtandPeople"
+            target="_blank"
+            class="w-10 h-10 items-center flex"
+          >
+            <img src="/assets/youtube.png" alt="socials" />
+          </a>
+          <a
+            href="https://www.instagram.com/spazio.artandpeople/"
+            target="_blank"
+            class="w-10 h-10"
+          >
+            <img src="/assets/instagram.png" alt="socials" />
+          </a>
         </div>
 
-        <p class="text-white mb-3">
+        <div class="text-white mb-3">
           spazio.
-        </p>
+        </div>
       </div>
-    </header>
+    </div>
   </div>
 </template>
 
@@ -130,7 +141,7 @@ export default {
         const url =
           "https://worker-question-ingress.cloudflare3389.workers.dev";
         const payload = {
-          domanda: this.domanda,
+          domanda: domanda,
         };
 
         try {
