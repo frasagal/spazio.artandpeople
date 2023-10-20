@@ -1,17 +1,17 @@
 <template>
   <div id="main" class="flex justify-center items-start h-screen bg-black">
     <header
-      class="header text-center w-full mx-auto max-w-screen-md p-6 md:p-8 bg-black text-white font-sans"
+      class="header text-center w-full mx-auto max-w-screen-md p-8 md:p-8 bg-black text-white font-sans"
     >
       <div class="my-6 text-center">
         <img
           src="assets/logo.svg"
-          class="w-40 mx-auto"
+          class="w-32 md:w-40 mx-auto"
           alt="Logo"
           style="margin-top: 20px;"
         />
       </div>
-      <div class="my-14">
+      <div class="my-14" v-if="!isSended">
         <h2 class="text-white text-2xl md:text-3xl mb-4">
           Scrivi qui la tua domanda
         </h2>
@@ -32,18 +32,31 @@
           </div>
           <div class="text-right mt-2">
             <input
+              v-if="!isLoading"
               type="button"
               @click="inviaDomanda()"
               value="INVIA"
-              class="bg-transparent border border-white px-4 py-2 text-white uppercase cursor-pointer transition duration-300 hover:bg-white hover:text-black"
+              class="bg-transparent border border-white px-4 py-2 text-white uppercase cursor-pointer transition duration-150 hover:bg-white hover:text-black"
             />
+            <div v-else class="flex w-full flex-row-reverse py-px">
+              <div class="w-10">
+                <div class="loader"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div
+        v-else
+        class="items-center flex space-x-2 justify-center py-3 text-green-400"
+      >
+        <span class="text-2xl">✓ </span
+        ><span> La tua risposta è stata inviata!</span>
+      </div>
       <p class="text-white text-base md:text-lg my-6 text-justify">
         Per scoprire la risposta alla tua domanda e a quelle che hai letto in
-        vetrina ti invitiamo all'evento di sabato 18 novembre esattamente qui, a
-        spazio.
+        vetrina ti invitiamo all'<strong>evento</strong> di sabato
+        <strong>18 NOVEMBRE</strong> esattamente qui, a <u>spazio.</u>
       </p>
       <form
         action="https://www.paypal.com/donate"
@@ -92,12 +105,12 @@
 <script>
 export default {
   name: "HomePage",
-  // components: { IconLogo },
   data() {
     return {
+      isLoading: false,
+      isSended: false,
       domanda: "",
       charCount: 0,
-      rows: 1,
     };
   },
   methods: {
@@ -110,34 +123,77 @@ export default {
     },
 
     async inviaDomanda() {
-      const url = "https://worker-question-ingress.cloudflare3389.workers.dev";
-      const payload = {
-        domanda: this.domanda,
-      };
+      this.isLoading = true;
 
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "text/plain",
-          },
-          body: JSON.stringify(payload),
-        });
+      const domanda = this.sanitize();
+      if (domanda) {
+        const url =
+          "https://worker-question-ingress.cloudflare3389.workers.dev";
+        const payload = {
+          domanda: this.domanda,
+        };
 
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Risposta:", data);
-        } else {
-          console.error("Errore nella richiesta:", response.statusText);
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "text/plain",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          if (response.ok) {
+            console.log("Risposta inviata!");
+            this.isSended = true;
+          } else {
+            console.error("Errore nella richiesta:", response.statusText);
+          }
+        } catch (error) {
+          console.error("Errore durante la richiesta:", error);
         }
-      } catch (error) {
-        console.error("Errore durante la richiesta:", error);
       }
+      this.isLoading = false;
+    },
+
+    sanitize() {
+      if (this.domanda) {
+        const domanda = this.domanda;
+
+        // Sanitizzazione del testo
+        const sanitizedDomanda = domanda
+          .trim()
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+
+        // Controllo se è un testo non vuoto
+        if (domanda.trim() !== "") {
+          return sanitizedDomanda;
+        } else return false;
+      } else return false;
     },
   },
 };
 </script>
 <style>
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #f3f3f3;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .cls-1 {
   fill: #262626;
 }
