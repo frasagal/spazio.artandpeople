@@ -15,7 +15,7 @@
         <h2 class="text-white text-2xl md:text-3xl mb-4">
           Scrivi qui la tua domanda
         </h2>
-        <form action="answear.php" method="post">
+        <div>
           <div class="relative">
             <textarea
               ref="testo"
@@ -32,12 +32,13 @@
           </div>
           <div class="text-right mt-2">
             <input
-              type="submit"
+              type="button"
+              @click="inviaDomanda()"
               value="INVIA"
               class="bg-transparent border border-white px-4 py-2 text-white uppercase cursor-pointer transition duration-300 hover:bg-white hover:text-black"
             />
           </div>
-        </form>
+        </div>
       </div>
       <p class="text-white text-base md:text-lg my-6 text-justify">
         Per scoprire la risposta alla tua domanda e a quelle che hai letto in
@@ -89,13 +90,6 @@
 </template>
 
 <script>
-// import IconLogo from "../components/icons/IconLogo.vue";
-import { applyPolyfills, defineCustomElements } from "shuffle-text-c/loader";
-
-applyPolyfills().then(() => {
-  defineCustomElements();
-});
-
 export default {
   name: "HomePage",
   // components: { IconLogo },
@@ -114,45 +108,36 @@ export default {
         this.charCount = 280;
       }
     },
-  },
-  computed: {
-    dictionary() {
-      return this.$store.getters["multilang/dictionary"];
+
+    async inviaDomanda() {
+      const url = "https://worker-question-ingress.cloudflare3389.workers.dev";
+      const payload = {
+        domanda: this.domanda,
+      };
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Risposta:", data);
+        } else {
+          console.error("Errore nella richiesta:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Errore durante la richiesta:", error);
+      }
     },
-    fullname() {
-      return (
-        this.dictionary.home_title_h1[0] +
-        " " +
-        this.dictionary.home_title_h1[1] +
-        " " +
-        this.dictionary.home_title_h1[2]
-      );
-    },
-  },
-  mounted() {
-    console.log(this.dictionary);
   },
 };
 </script>
 <style>
-.diocane {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  margin-top: 0px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s;
-  width: min-content;
-  margin: auto;
-}
-
-.diocane:hover,
-.diocane:active {
-  background-color: #fff;
-  color: #000;
-}
-
 .cls-1 {
   fill: #262626;
 }
