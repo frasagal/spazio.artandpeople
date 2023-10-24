@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import HomePage from './pages/HomePage'
-import AboutPage from './pages/AboutPage'
+import ThankYouPage from './pages/AboutPage'
 import BadgesPage from './pages/BadgesPage'
 import JoinPage from './pages/JoinPage'
 
@@ -15,9 +15,9 @@ const router = createRouter({
       component: HomePage
     },
     {
-      path: '/about',
-      name: 'about',
-      component: AboutPage
+      path: '/thank-you',
+      name: 'thank-you',
+      component: ThankYouPage
     },
     {
       path: '/join',

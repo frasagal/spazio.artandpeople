@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black">
     <div
-      class="relative text-center w-full mx-auto max-w-screen-md p-8 md:p-8 text-white font-sans flex flex-col h-full min-h-screen justify-between"
+      class="relative text-center w-full mx-auto max-w-screen-md p-8 md:p-8 text-white font-mono flex flex-col h-full min-h-screen justify-between"
     >
       <!-- class=" text-center w-full mx-auto max-w-screen-md p-8 md:p-8 text-white font-sans flex flex-col h-screen justify-between" -->
       <div class="my-6 text-center">
@@ -59,54 +59,51 @@
         vetrina ti invitiamo all'<strong>evento</strong> di sabato
         <strong>18 NOVEMBRE</strong> esattamente qui, a <u>spazio.</u>
       </div>
-      <div>
-        <form
-          action="https://www.paypal.com/donate"
-          method="post"
-          target="_top"
-          class="mt-14"
-        >
-          <p class="text-white text-base md:text-lg my-6 text-center">
-            Sostieni il progetto con una donazione!
-          </p>
-          <input type="hidden" name="hosted_button_id" value="YZXWNYEABVQAS" />
-          <input
-            type="image"
-            src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_LG.gif"
-            border="0"
-            name="submit"
-            title="PayPal - The safer, easier way to pay online!"
-            alt="Fai una donazione con il pulsante PayPal"
-          />
-          <img
-            alt=""
-            border="0"
-            src="https://www.paypal.com/it_IT/i/scr/pixel.gif"
-            width="1"
-            height="1"
-          />
-        </form>
+      <div class="flex items-center flex-col">
+        <div id="donate-button-container">
+          <div id="donate-button"></div>
+        </div>
       </div>
       <div class="mt-6 mx-auto w-full">
-        <div class="relative flex justify-evenly mb-8">
-          <a
-            href="https://www.youtube.com/@SpazioArtandPeople"
-            target="_blank"
-            class="w-10 h-10 items-center flex"
-          >
-            <img src="/assets/youtube.png" alt="socials" />
-          </a>
-          <a
-            href="https://www.instagram.com/spazio.artandpeople/"
-            target="_blank"
-            class="w-10 h-10"
-          >
-            <img src="/assets/instagram.png" alt="socials" />
-          </a>
-        </div>
-
-        <div class="text-white mb-3">
-          spazio.
+        <div class="relative flex flex-col sm:flex-row  mb-8">
+          <div class="flex-grow text-left">
+            <p class="text-gray-500 text-xs mb-2">
+              CONTATTACI
+            </p>
+            <div class="text-white mb-2 mt-1 flex flex-col">
+              <a href="mailto:info@spazioartandpeople.com">
+                info@spazioartandpeople.com
+              </a>
+              <a
+                target="_blank"
+                href="https://www.google.it/maps/@43.5706519,12.1408013,3a,75y,32.26h,87.03t/data=!3m6!1e1!3m4!1sDeNTAxxCprVzP1S2-TR-tw!2e0!7i16384!8i8192?entry=ttu"
+                class="text-xs"
+              >
+                Via XX Settembre 106/A Sansepolcro Arezzo
+              </a>
+            </div>
+          </div>
+          <div class="text-left sm:text-right">
+            <p class="text-gray-500 text-xs mb-2">
+              SEGUICI
+            </p>
+            <div class="flex space-x-3 sm:pt-3">
+              <a
+                href="https://www.youtube.com/@SpazioArtandPeople"
+                target="_blank"
+                class="w-6 h-6 items-center flex"
+              >
+                <img src="/assets/youtube.png" alt="socials" />
+              </a>
+              <a
+                href="https://www.instagram.com/spazio.artandpeople/"
+                target="_blank"
+                class="w-6 h-6 items-center flex"
+              >
+                <img src="/assets/instagram.png" alt="socials" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -124,7 +121,22 @@ export default {
       charCount: 0,
     };
   },
+  async mounted() {
+    await this.loadDonate();
+  },
   methods: {
+    async loadDonate() {
+      window.PayPal.Donation.Button({
+        env: "production",
+        hosted_button_id: "YZXWNYEABVQAS",
+        image: {
+          src:
+            "https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif",
+          alt: "Fai una donazione con il pulsante PayPal",
+          title: "PayPal - The safer, easier way to pay online!",
+        },
+      }).render("#donate-button");
+    },
     checkCharCount() {
       this.charCount = this.domanda.length;
       if (this.charCount > 280) {
@@ -132,7 +144,6 @@ export default {
         this.charCount = 280;
       }
     },
-
     async inviaDomanda() {
       this.isLoading = true;
 
@@ -185,6 +196,18 @@ export default {
   },
 };
 </script>
+
+<!--<script>
+PayPal.Donation.Button({
+  env: "production",
+  hosted_button_id: "YZXWNYEABVQAS",
+  image: {
+    src: "https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif",
+    alt: "Fai una donazione con il pulsante PayPal",
+    title: "PayPal - The safer, easier way to pay online!",
+  },
+}).render("#donate-button");
+</script> -->
 <style>
 .loader {
   border: 4px solid rgba(0, 0, 0, 0.1);
